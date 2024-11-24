@@ -1,3 +1,4 @@
+//This code is to build connection with db and pushing data into it 
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
