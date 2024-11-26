@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Task = require("../models/task");
 const User = require("../models/user");
-router.post("/create-task", async (req, res) => {
+const authenticateToken = require("./auth");
+router.post("/create-task", authenticateToken, async (req, res) => {
   try {
     const { title, desc } = req.body;
     const { id } = req.headers;
